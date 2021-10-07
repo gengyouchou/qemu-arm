@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
-#define PORT 8080
+#define PORT 2375
 int main(int argc, char const *argv[])
 {
     int server_fd, new_socket, valread;
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
         perror("setsockopt");
         exit(EXIT_FAILURE);
     }
-    printf("socket to port 8080\n");
+    printf("socket to port 2375\n");
 
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
