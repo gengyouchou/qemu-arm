@@ -5,8 +5,14 @@ sudo qemu-system-arm \
 -M vexpress-a9 \
 -m 512M \
 -nographic \
--net nic -net tap,ifname=tap0,script=no \
--kernel /home/dptemp/arm/u-boot-2018.11/u-boot \
+-device virtio-net-device,netdev=net0 \
+-netdev user,id=net0,hostfwd=tcp:127.0.0.1:5555-:8080 \
+-kernel /home/dptemp/arm/TFTP_HOME/zImage \
+-dtb /home/dptemp/arm/TFTP_HOME/vexpress-v2p-ca9.dtb \
+-append "root=/dev/mmcblk0 rw ip=::255.255.255.0 console=ttyAMA0" \
+-sd a9rootfs.ext4 \
+
+#-net nic -net tap,ifname=tap0,script=no \
 #-dtb ./linux-5.10.70/object/arch/arm/boot/dts/vexpress-v2p-ca9.dtb
 #-sd a9rootfs.ext4
 #-drive if=pflash,format=raw,index=1,file=/home/dptemp/TFTP_HOME/flash.img
