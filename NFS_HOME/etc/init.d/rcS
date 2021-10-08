@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# 掛載 /etc/fstab 中定義的所有文件系統
+/bin/mount -a
+
+# 使用mdev動態管理u盤和鼠標等熱插拔設備
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+  
+# 掃描並創建節點
+/sbin/mdev -s

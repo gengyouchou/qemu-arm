@@ -1,0 +1,18 @@
+# 主機名
+export HOSTNAME=MacrofunArm
+
+# 用戶名
+export USER=root
+
+# 用戶目錄
+export HOME=root
+
+# 終端默認提示符
+export PS1="[$USER@$HOSTNAME \W]\# "    
+
+	# 環境變量
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+# 動態庫路徑
+export LD_LIBRARY_PATH=/lib:/usr/lib:$LD_LIBRARY_PATH
+

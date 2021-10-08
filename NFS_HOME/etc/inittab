@@ -1,0 +1,16 @@
+# 系統啓動時
+::sysinit:/etc/init.d/rcS
+
+# 系統啓動按下Enter鍵時
+::askfirst:/bin/sh
+
+# 按下Ctrl+Alt+Del鍵時
+::ctrlaltdel:/sbin/reboot
+
+# 系統關機時
+::shutdown:/sbin/swapoff -a
+::shutdown:/bin/umount -a -r
+
+# 系統重啓時
+::restart:/sbin/init
+
