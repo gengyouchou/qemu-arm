@@ -6,7 +6,7 @@ sudo qemu-system-arm \
 -m 512M \
 -nographic \
 -device virtio-net-device,netdev=net0 \
--netdev user,id=net0,hostfwd=tcp:127.0.0.1:5555-:8080 \
+-netdev user,id=net0,hostfwd=tcp:127.0.0.1:15555-:8080 \
 -kernel /home/dptemp/arm/TFTP_HOME/zImage \
 -dtb /home/dptemp/arm/TFTP_HOME/vexpress-v2p-ca9.dtb \
 -append "root=/dev/mmcblk0 rw ip=::255.255.255.0 console=ttyAMA0" \

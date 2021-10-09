@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
-#define PORT 5555
+#define PORT 15555
 
 int main(int argc, char const *argv[])
 {
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
 		return -1;
 	}
 
-	printf("connect seccess \n");
+	printf("connect seccess 127.0.0.1:15555 \n");
 
 	send(sock, hello, strlen(hello), 0);
 	printf("Hello message sent\n");
